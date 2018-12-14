@@ -5,9 +5,9 @@ import {View,Text} from 'react-native';
 const Card=(props)=>{
 	return	(
 				<View style={styles.containerStyle}>
-					<Text style={styles.textview}>
+					
 						{props.children}
-					</Text>
+					
 				</View>
 			);
 };
@@ -26,9 +26,6 @@ const styles={
 				marginRight:5,		
 				marginTop:10		
 		
-			},
-			textview:{
-				fontSize:20
 			}
 		};
 
