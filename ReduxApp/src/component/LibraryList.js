@@ -6,26 +6,25 @@ import ListItem from './ListItem'
 class LibraryList extends Component{
 	
 	componentWillMount(){
-		const ls= new ListView.DataSource({
+		const ds= new ListView.DataSource({
 			rowHasChanged: (r1, r2) => r1 !== r2
 		});
-		this.dataSource= ls.cloneWithRows(this.props.Libraries);
+		this.dataSource= ds.cloneWithRows(this.props.libraries);
 	}
-	renderRow(Library){
-			return <ListItems library={Library}/>;
+	renderRow(library){
+			return <ListItems library={library}/>;
 	}
 	render(){
-		console.log(this.props);
+		
 		return(
 			<ListView 
-			DataSource={this.dataSource}
+			dataSource={this.dataSource}
 			renderRow={this.renderRow}
 			/>
-			}
 			);
 	}
 }
 const mapStatetoProps=state =>{
-	 	return{Library: state.Library};
+	 	return{library: state.libraries};
 }
-export default connect()(LibraryList);
+export default connect(mapStatetoProps)(LibraryList);
