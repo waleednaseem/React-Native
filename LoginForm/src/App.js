@@ -27,5 +27,7 @@ class App extends Component{
 					</View>
 				</Provider>
 			);
-	};
+	}
 }
+
+export default App;
