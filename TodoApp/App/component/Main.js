@@ -27,8 +27,13 @@ export default class App extends Component<Props> {
        			>
 
        			</TextInput>
-       		</View>
 
+       		</View>
+       		<TouchableOpacity style={styles.addButton}>
+       			<Text>
+       			+
+       			</Text>
+       		</TouchableOpacity>
       </View>
     );
   }
@@ -74,4 +79,21 @@ const styles = StyleSheet.create({
     	backgroundColor:'#252525',
     	borderTopColor: '#ededed'
   }, 
+  addButton:{
+  	position: 'absolute',
+  	zIndex: 11,
+  	right: 20,
+  	bottom: 90,
+  	backgroundColor:'#E91E63',
+  	width: 90,
+  	height: 90,
+  	borderRadius: 50,
+  	alignItems:'center',
+  	justifyContent:'center',
+  	elevation: 8,
+  },
+  addButtonText:{
+  	color:'#fff',
+  	fontSize: 24,
+  }
 });
