@@ -1,11 +1,6 @@
 import React, {Component} from 'react';
-import {StyleSheet,
- Text,
- View,
- TextInput,
- ScrollView,
- TouchableOpacity } from 'react-native';
 import Main from './App/component/Main';
+import Note from './App/component/Note';
 
 export default class App extends Component<Props> {
   render() {
@@ -15,8 +10,3 @@ export default class App extends Component<Props> {
   }
 } 
 
-const styles = StyleSheet.create({
-  container: {
-    
-  },
-});

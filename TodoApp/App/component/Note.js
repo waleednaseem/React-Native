@@ -4,7 +4,7 @@ import {StyleSheet,
  View,
  TouchableOpacity } from 'react-native';
 
-export default class App extends Component<Props> {
+export default class Note extends Component<Props> {
   render() {
     return (
 	     <View key={this.props.keyval} style={styles.note}>

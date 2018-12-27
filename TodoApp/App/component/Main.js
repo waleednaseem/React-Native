@@ -7,7 +7,7 @@ ScrollView,
 TouchableOpacity } from 'react-native';
 import Note from './Note';
 
-export default class App extends Component<Props> {
+export default class Main extends Component<Props> {
 	constructor(props){
 		super(props);
 		this.state ={
@@ -17,10 +17,7 @@ export default class App extends Component<Props> {
 	}
 
   render() {
-  		let notes = this.state.noteArray.map((val , key)=>{
-  			return < Note key={key} keyval={key} val={val}
-  			deleteMethod={()=> this.deleteNote(key)} />
-  		});
+  		let notes = this.state.noteArray.map((val , key) => {return < Note key={key} keyval={key} val={val} deleteMethod={()=> this.deleteNote(key)} /> });
     return (
       <View style={styles.container}>
        		<View style={styles.header}>
@@ -45,12 +42,13 @@ export default class App extends Component<Props> {
        		</View>
        		<TouchableOpacity style={styles.addButton} onPress={this.addnote.bind(this)}>
        			<Text>
-       			+
+       				+
        			</Text>
        		</TouchableOpacity>
       </View>
     );
   }
+// .........................................................................
   addnote(){
   	if (this.state.noteText) {
   		var d= new Date();
@@ -64,12 +62,13 @@ export default class App extends Component<Props> {
   		this.setState({noteText: ''}); 
   	}
   }
+
   deleteNote(key){
   	this.state.noteArray.splice(key)
   	this.setState({noteArray: this.state.noteArray})
   }
 }
-
+// ...................................................................
 const styles = StyleSheet.create({
   container: {
     	flex:1,
