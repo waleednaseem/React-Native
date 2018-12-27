@@ -32,6 +32,7 @@ export default class Main extends Component<Props> {
        			<TextInput 
        			style={	styles.textInput} 
        			onChangeText={(noteText)=>this.setState({noteText})}
+       			value={this.state.noteText}
        			placeholder='>note'
        			placeholderTextColor='white'
        			underlineColorAndroid='transparent'
@@ -40,7 +41,7 @@ export default class Main extends Component<Props> {
        			</TextInput>
 
        		</View>
-       		<TouchableOpacity style={styles.addButton} onPress={this.addnote.bind(this)}>
+       		<TouchableOpacity onPress={this.addnote.bind(this)}  style={styles.addButton}>
        			<Text>
        				+
        			</Text>
