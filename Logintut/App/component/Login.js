@@ -65,6 +65,8 @@ export default class Login extends Component<Props> {
   		})
   		.then((response)=>response.json())
   		.then((res) =>{
+  				alert(res.message);
+  				
   			if(res.success === true){
   				AsyncStorage.setItem('user',res.user);
   				this.props.navigation.navigate('profile');
