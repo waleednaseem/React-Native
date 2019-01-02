@@ -52,7 +52,7 @@ export default class Login extends Component<Props> {
   }
   
   login=() =>{
-  		fetch('http://192.5454.25.2:3000/users',{
+  		fetch('http://192.168.1.101:80/users',{
   			method: 'POST',
   			headers: {
   				'Accept':'application/json',
@@ -63,9 +63,9 @@ export default class Login extends Component<Props> {
   				password: this.state.password,
   			})
   		})
-  		.then((response)=>response.json())
+  		 
   		.then((res) =>{
-  				alert(res.message);
+  				alert("clicked");
   				
   			if(res.success === true){
   				AsyncStorage.setItem('user',res.user);
