@@ -39,6 +39,7 @@ export default class Login extends Component<Props> {
         		<TextInput style={styles.textInput}
         		placeholder='password' 
         		onChangeText={(password)=> this.setState({password})}
+        		secureTextEntry={true}
         		underlineColorAndroid='transparent'
         		/>
         		<TouchableOpacity style={styles.btn} onPress={this.login}>
@@ -64,9 +65,7 @@ export default class Login extends Component<Props> {
   			})
   		})
   		 
-  		.then((res) =>{
-  				alert("clicked");
-  				
+  		.then((res) =>{  				
   			if(res.success === true){
   				AsyncStorage.setItem('user',res.user);
   				this.props.navigation.navigate('profile');

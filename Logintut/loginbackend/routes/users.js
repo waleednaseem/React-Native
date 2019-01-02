@@ -10,7 +10,23 @@ var connection= mysql.createConnection({
 });
 
 router.post('/', function(req, res, next) {
-  res.send({message:'Testing to get the data'});
+  var username = req.body.username;
+  var password = req.body.password;
+
+   connection.query({
+   	"SELECT * FROM user WHERE username =? AND password=?",
+   	[username, password],function function(err,row,field) {
+   		if (err) {
+   			console.log(err);
+   		res.send({'success': false,'message':'Could not connect db'});
+   		} 
+   		if (row.lenght > 0) {
+   			res.send({'success': true, 'user': row[0].username});
+   		}else {
+   			res.send({'success':false, 'message': 'user not found'});
+   		}
+   	}
+   });
 });
 
 module.exports = router;
