@@ -3,7 +3,7 @@ var router = express.Router();
 var mysql = require('mysql');
 
 var connection= mysql.createConnection({
-	host:'192.168.1.101',
+	host:'192.168.97.2',
 	user:'root',
 	password:'root',
 	database:'reactnative'

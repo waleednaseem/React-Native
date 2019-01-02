@@ -53,7 +53,7 @@ export default class Login extends Component<Props> {
   }
   
   login=() =>{
-  		fetch('http://192.168.1.101:80/users',{
+  		fetch('http://192.168.97.2:80/users',{
   			method: 'POST',
   			headers: {
   				'Accept':'application/json',
