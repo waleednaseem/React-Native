@@ -11,7 +11,7 @@ export default class Login extends Component<Props> {
   			username: '',
   			password: '',
   		}
-  		
+  		this.
   	}	
   	componentDidMount(){
   			this._loadInitialState().done();
@@ -53,7 +53,8 @@ export default class Login extends Component<Props> {
   }
   
   login=() =>{
-  		fetch('http://192.168.97.2:80/users',{
+      // alert(JSON.stringify(this.state))
+  		fetch('http://192.168.0.106:4000/users',{
   			method: 'POST',
   			headers: {
   				'Accept':'application/json',
@@ -75,6 +76,9 @@ export default class Login extends Component<Props> {
   			}
 
   		})
+      .catch((err)=>{
+        alert(JSON.stringify(err));
+      })
   		.done();
   }
 }
@@ -95,6 +99,7 @@ const styles=StyleSheet.create({
 		marginBottom: 60,
 		color: '#fff',
 		fontWeight:'bold',
+		
 	},
 	textInput:{
 		alignSelf:'stretch',

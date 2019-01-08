@@ -3,19 +3,19 @@ var router = express.Router();
 var mysql = require('mysql');
 
 var connection= mysql.createConnection({
-	host:'192.168.97.2',
+	host:'localhost:80',
 	user:'root',
 	password:'root',
 	database:'reactnative'
 });
 
 router.post('/', function(req, res, next) {
+  console.log(req.body);
   var username = req.body.username;
   var password = req.body.password;
+  let sql = "SELECT * FROM user WHERE username ='"+username+"'' AND password='"+password+"'";
 
-   connection.query({
-   	"SELECT * FROM user WHERE username =? AND password=?",
-   	[username, password],function function(err,row,field) {
+   connection.query(sql,(err,row,field)=> {
    		if (err) {
    			console.log(err);
    		res.send({'success': false,'message':'Could not connect db'});
@@ -25,8 +25,6 @@ router.post('/', function(req, res, next) {
    		}else {
    			res.send({'success':false, 'message': 'user not found'});
    		}
-   	}
-   });
-});
-
+   	});
+ });
 module.exports = router;
