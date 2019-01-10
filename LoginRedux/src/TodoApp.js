@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import AddTodo from './containers/AddTodo';
-
-export default class TodoApp extends Component<Props> {
+import visibileTodos from './containers/visibleTodos'
+export default class TodoApp extends Component {
 
   state={
     todos:[],
@@ -14,8 +14,9 @@ export default class TodoApp extends Component<Props> {
       <View style={styles.container}>
         <AddTodo />
         <View>
-
+            <visibileTodos />
         </View>
+
       </View>
     );
   }
