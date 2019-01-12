@@ -14,8 +14,11 @@ const todos = (state=[],action)=>{
             ...todo, completed:
             !todo.completed
         }:
-        todo )
+        todo 
+        )
+        default:
+         return state
     }
-    }
+}
    
 export default todos
