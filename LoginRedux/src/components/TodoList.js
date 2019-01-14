@@ -6,12 +6,14 @@ import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
             return(
                 <View>
                 {todos.map(todo =>
-                    <TouchableOpacity key={todos.id} onPress={()=>toggleTodo(todo.id)}>
+                    <TouchableOpacity key={todo.id} onPress={()=>toggleTodo(todo.id)}>
                     <Text style={{
+                        padding: 30,
+                        color:'#000',
                         fontSize: 24,
                         textDecorationLine:todo.completed? 'line-through':'none'
                     }}>
-                        {todos.text}
+                        {todo.text}
                     </Text>
                 </TouchableOpacity>   
                 )}
