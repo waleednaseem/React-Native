@@ -8,7 +8,7 @@ import {connect} from 'react-redux'
     text:''
   }
   AddTodo= (text) => {
-    this.props.dispatch({type: 'ADD_TODO',text})
+    this.props.dispatch({type:'ADD_TODO',text})
     this.setState({text:''})
   }
   render() {
@@ -23,7 +23,8 @@ import {connect} from 'react-redux'
                 padding:5}}
         />
         <TouchableOpacity onPress={()=>this.AddTodo(this.state.text)}>
-          <View style={{height:50,backgroundColor:'#eaeaea'}}>
+          <View style={{height:50,backgroundColor:'#eaeaea',
+              alignItems:'center', justifyContent:'center'}}>
             <Ionicons name="md-add" size= {30} style={{
               color:'#de9595', padding: 10
             }}/>
