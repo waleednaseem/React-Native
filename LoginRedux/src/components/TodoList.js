@@ -8,7 +8,7 @@ import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
                 {todos.map(todo =>
                     <TouchableOpacity key={todo.id} onPress={()=>toggleTodo(todo.id)}>
                     <Text style={{
-                        padding: 30,
+                        padding: 10,
                         color:'#000',
                         fontSize: 24,
                         textDecorationLine:todo.completed? 'line-through':'none'

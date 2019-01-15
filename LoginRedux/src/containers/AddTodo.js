@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import {connect} from 'react-redux'
+import {AddTodo} from '../actions'
 
  class AddTodo extends Component {
   state={
     text:''
   }
   AddTodo= (text) => {
-    this.props.dispatch({type:'ADD_TODO',text})
+    this.props.dispatch(addTodo(text))
     this.setState({text:''})
   }
   render() {
