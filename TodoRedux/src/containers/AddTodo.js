@@ -14,7 +14,7 @@ import {AddTodo} from '../actions'
   }
   render() {
     return (
-      <View style={{flexDirection:'row', marginHorizontal: 20}}>
+      <View style={{flexDirection:'row', margin: 20}}>
         <TextInput
           onChangeText={(text)=>this.setState({text})}
           value={this.state.text} 

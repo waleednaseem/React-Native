@@ -1,6 +1,6 @@
 export {ADD_TODO,TOGGLE_TODO} from './actionTypes'
 let nextId=0
-export const addTodo=(text) => ({
+export const ADD=(text) => ({
     type: ADD_TODO,
     id:nextId++,
     text
