@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import * as firebase from 'firebase';
 import {Container, Content, Header, Form, Input, Item, Button, Label} from 'native-base';
 
