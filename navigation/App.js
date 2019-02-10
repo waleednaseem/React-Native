@@ -22,7 +22,7 @@ class Home extends Component<Props> {
 }
 
 const Navigators = createStackNavigator({
-  Home:app
+  Home:Home
 });
 
 export default createAppContainer(Navigators);
