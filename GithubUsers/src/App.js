@@ -5,9 +5,9 @@ import ListComponent from './components/ListComponent/ListComponent'
 import {Provider} from 'react-redux'
 import store from './redux/store'
 import axios from 'axios';
-import {useDispatch} from 'redux'
+// import {useDispatch} from 'redux'
 
-const dispatch=useDispatch()
+// const dispatch=useDispatch()
 
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
   }
   ,[]) 
 
-  const username=dispatch({type:'SET_USER', username})
+  // const username=dispatch({type:'SET_USER', username})
   
     const setData=({name,username,follower,following,respo,avatar})=>{
       setname=(name)
