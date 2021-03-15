@@ -1,7 +1,8 @@
 import React from 'react'
-import {Text , View} from 'react-native'
+import {StyleSheet, Text , View} from 'react-native'
 import { Message } from '../../Types/Types'
 import moment from 'moment'
+import ChatInput from './ChatInput'
 
 export type chatMessages={
     message: Message
@@ -12,17 +13,25 @@ const Messages=(props: chatMessages)=>{
         return message.user.id === 'u1'
     }
     return(
-        <View>
-            <Text>
-                {message.user.name}
-            </Text>
-            <Text>
-                {message.content}
-            </Text>
-            <Text>
-                {moment(message.createdAt).fromNow()}
-            </Text>
-        </View>
+            <View style={{
+                backgroundColor: isMyMsg()? 'white':'lightgray',
+                padding:10,
+                borderRadius: 10,
+                marginLeft:isMyMsg()?50 :0,
+                marginRight:isMyMsg()?0 :50,
+                margin: 10,
+                }}>
+                <Text style={{color:'black',fontSize:15}}>
+                    {!isMyMsg()?message.user.name:''}
+                </Text>
+                <Text style={{color:'black',fontSize:17}}>
+                    {message.content}
+                </Text>
+                <Text style={{color:'black',alignSelf: 'flex-end',}}>
+                    {moment(message.createdAt).fromNow()}
+                </Text>
+            </View>
     )
 }
+
 export default Messages
