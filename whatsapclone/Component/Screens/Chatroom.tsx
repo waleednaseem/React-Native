@@ -14,7 +14,7 @@ export default function Chatroom() {
                   <FlatList
                         data={Chats.messages}
                         renderItem={({item})=><Messages message={item}/>}
-                        inverted
+                        // inverted
                     />
                       <ChatInput/>
               </View>

@@ -2,7 +2,6 @@ import React from 'react'
 import {StyleSheet, Text , View} from 'react-native'
 import { Message } from '../../Types/Types'
 import moment from 'moment'
-import ChatInput from './ChatInput'
 
 export type chatMessages={
     message: Message
